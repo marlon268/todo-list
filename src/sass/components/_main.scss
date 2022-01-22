@@ -1,0 +1,81 @@
+.main {
+	@include display-flex(flex-start, center, column);
+	min-height: 500px;
+	width: 100%;
+	margin-top: 20px;
+
+	&-input {
+		@include display-flex(space-around, center, row);
+		box-shadow: 1px 1px 5px 0px $color2;
+		padding: 0px 10px;
+		margin-bottom: 10px;
+		width: 320px;
+
+		@media (min-width: 724px) {
+			width: 500px;
+		}
+		&_input {
+			outline: none;
+			border: none;
+			font-size: 1rem;
+			height: 40px;
+			margin-right: 10px;
+			width: 300px;
+
+			@media (min-width: 724px) {
+				width: 500px;
+			}
+		}
+	}
+
+	&-div {
+		@include display-flex(space-around, center, row);
+		width: 320px;
+		height: 40px;
+		margin-bottom: 10px;
+
+		@media (min-width: 724px) {
+			width: 500px;
+			height: 60px;
+		}
+
+		@media (min-width: 1024px) {
+			width: 724px;
+		}
+
+		&_button {
+			box-shadow: 1px 1px 5px 0px $color2;
+			padding: 5px;
+			height: 30px;
+
+			@media (min-width: 724px) {
+				height: 40px;
+				font-size: 1rem;
+			}
+		}
+	}
+
+	&-section {
+		@include display-flex(center, center, column);
+		width: 320px;
+
+		@media (min-width: 724px) {
+			width: 600px;
+		}
+
+		@media (min-width: 1024px) {
+			width: 800px;
+		}
+
+		&_article {
+			@include display-flex(center, center, row);
+			box-shadow: 1px 1px 5px 0px $color2;
+			padding: 5px 10px;
+			margin: 5px;
+		}
+
+		h4 {
+			margin: 5px;
+		}
+	}
+}

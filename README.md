@@ -1,7 +1,6 @@
-# To-do list
+# To-Do list
 
-Proyecto relizado con create-react-app y SASS
-Version de node 14.18.3
+Proyecto relizado con create-react-app y SASS - Version de node 14.18.3
 
 ## ¿Como funciona?
 
