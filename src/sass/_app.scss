@@ -1,4 +1,12 @@
 .todo-list {
 	@include display-flex(center, center, column);
 	font-family: 'Roboto', sans-serif;
+
+	&_content {
+		@include display-flex(center, flex-start, row);
+		flex-wrap: wrap;
+		section {
+			margin: 25px;
+		}
+	}
 }

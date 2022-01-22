@@ -1,0 +1,34 @@
+.main-section {
+	@include display-flex(center, center, column);
+	width: 320px;
+
+	@media (min-width: 724px) {
+		width: 400px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 450px;
+	}
+
+	@media (min-width: 1320px) {
+		width: 550px;
+	}
+
+	.article {
+		@include display-flex(center, center, row);
+		box-shadow: 1px 1px 5px 0px $color2;
+		padding: 5px 10px;
+		margin: 5px;
+
+		&_button {
+			margin: 5px;
+			img {
+				width: 30px;
+			}
+		}
+	}
+
+	h4 {
+		margin: 5px;
+	}
+}
