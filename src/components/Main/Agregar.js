@@ -34,10 +34,10 @@ export const Agregar = () => {
 	return (
 		<div className="main-div">
 			<button className="main-div_button" onClick={handleModal}>
-				Añadir tarea
+				<h4>Añadir tarea</h4>
 			</button>
 			<button className="main-div_button" onClick={handleModalGatos}>
-				Agregar frases de gatos
+				<h4>Agregar frases de gatos</h4>
 			</button>
 			<MyModal
 				modalIsOpen={modalIsOpen}
@@ -46,6 +46,7 @@ export const Agregar = () => {
 				setValue={setValue}
 				tare={handleTarea}
 				type="Agregar"
+				title="Agrega una tarea"
 			/>
 
 			<MyModalGatos

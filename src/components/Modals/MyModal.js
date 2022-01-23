@@ -9,7 +9,7 @@ const customStyles = {
 		marginRight: '-50%',
 		transform: 'translate(-50%, -50%)',
 		width: '500px',
-		height: '500px',
+		height: '400px',
 	},
 };
 
@@ -22,6 +22,7 @@ export const MyModal = ({
 	tare,
 	value,
 	type,
+	title,
 }) => {
 	const handleTexArea = ({ target }) => {
 		setValue(target.value);
@@ -35,7 +36,7 @@ export const MyModal = ({
 			closeTimeoutMS={500}
 		>
 			<div>
-				<label htmlFor="añadir">Agrega una tarea</label>
+				<label htmlFor="añadir">{title}</label>
 				<textarea
 					id="añadir"
 					className="modal-input"
@@ -54,7 +55,7 @@ export const MyModal = ({
 					<h4>{type}</h4>
 				</button>
 				<button className="main-div_button" onClick={closeModal}>
-					<h4>Regresar</h4>
+					<h4>Salir</h4>
 				</button>
 			</div>
 		</Modal>

@@ -25,7 +25,6 @@ export const Article = memo(({ cheked, content }) => {
 		setAnimation(true);
 		setTimeout(() => {
 			dispatch(eliminarTarea(content));
-			setAnimation(false);
 		}, 500);
 	};
 
@@ -74,7 +73,8 @@ export const Article = memo(({ cheked, content }) => {
 				setValue={setValue}
 				setModalIsOpen={setModalIsOpen}
 				tare={handleEditarTarea}
-				type="Editar"
+				type="Guardar"
+				title="Edita el contenido de tu tarea"
 			/>
 		</article>
 	);

@@ -1,4 +1,6 @@
 .ReactModal__Content {
+	box-shadow: 1px 1px 5px 0px $color2;
+
 	div {
 		@include display-flex(center, center, row);
 		flex-wrap: wrap;

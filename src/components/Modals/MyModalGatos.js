@@ -34,7 +34,7 @@ export const MyModalGatos = ({ modalIsOpen, closeModal }) => {
 	const handleRef = () => {
 		let value = select.current.value;
 
-		fetch(`https://catfact.ninja/facts?max_length=60&limit=${value}`)
+		fetch(`https://catfact.ninja/facts?max_length=200&limit=${value}`)
 			.then((data) => data.json())
 			.then((res) => {
 				const frases = res.data.map((frase) => frase.fact);
