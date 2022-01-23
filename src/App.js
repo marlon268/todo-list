@@ -9,8 +9,7 @@ import { Article } from './components/Main/SectionList/Article';
 import { StoreContext } from './store/StoreProvider';
 
 function App() {
-	const [store, dispatch] = useContext(StoreContext);
-	console.log(store);
+	const [store] = useContext(StoreContext);
 
 	return (
 		<div className="todo-list">
