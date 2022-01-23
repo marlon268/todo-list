@@ -1,6 +1,6 @@
 .main-section {
 	@include display-flex(center, center, column);
-	width: 320px;
+	width: 300px;
 
 	@media (min-width: 724px) {
 		width: 400px;
@@ -15,10 +15,23 @@
 	}
 
 	.article {
-		@include display-flex(center, center, row);
+		@include display-flex(space-between, center, row);
 		box-shadow: 1px 1px 5px 0px $color2;
+		width: 250px;
 		padding: 5px 10px;
 		margin: 5px;
+
+		@media (min-width: 724px) {
+			width: 300px;
+		}
+
+		@media (min-width: 1024px) {
+			width: 400px;
+		}
+
+		@media (min-width: 1320px) {
+			width: 500px;
+		}
 
 		&_button {
 			margin: 5px;
@@ -58,5 +71,13 @@
 
 	h4 {
 		margin: 5px;
+		width: 200px;
+		@media (min-width: 724px) {
+			width: 250px;
+		}
+
+		@media (min-width: 1024px) {
+			width: 350px;
+		}
 	}
 }

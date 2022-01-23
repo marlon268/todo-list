@@ -3,6 +3,7 @@
 @import './app';
 @import './components/main';
 @import './components/SectionList';
+@import './components/modal';
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -19,13 +20,16 @@ h2,
 h3 {
 	color: $color1;
 	text-align: center;
+	word-wrap: break-word;
 }
 
+h3,
 h4,
 h5,
 h6 {
 	color: $color2;
 	text-align: center;
+	word-wrap: break-word;
 
 	@media (min-width: 724px) {
 		font-size: 1.5rem;
@@ -48,6 +52,13 @@ button {
 	}
 }
 
+select {
+	width: 75px;
+	font-size: 1.5rem;
+	margin: 15px 0;
+	box-shadow: 1px 1px 5px 0px $color2;
+}
+
 @media (min-width: 724px) {
 	h1 {
 		font-size: 3.5rem;
@@ -55,33 +66,5 @@ button {
 
 	h2 {
 		font-size: 2.5rem;
-	}
-}
-
-.ReactModal__Content {
-	div {
-		@include display-flex(center, center, row);
-		flex-wrap: wrap;
-
-		textarea {
-			outline: none;
-			border: none;
-			box-shadow: 1px 1px 5px 0px $color2;
-			padding: 5px;
-			font-size: 1.5rem;
-			margin-bottom: 20px;
-			height: 40px;
-			width: 320px;
-			height: 200px;
-
-			@media (min-width: 724px) {
-				width: 500px;
-			}
-		}
-
-		button {
-			width: 120px;
-			margin: 10px;
-		}
 	}
 }

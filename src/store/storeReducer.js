@@ -1,20 +1,38 @@
+import { types } from './types';
+
 const initialStore = {
 	tareasPendientes: [
-		{ content: 'Comprar pastel', cheked: false },
-		{ content: 'Comer merienda', cheked: false },
+		{ content: 'Realizar compras del supermercado', cheked: false },
+		{
+			content:
+				'Terminar los proyectos de la universidad de la clase de matematicas',
+			cheked: false,
+		},
 	],
-	tareasTerminadas: [{ content: 'Lavar la ropa', cheked: true }],
+	tareasTerminadas: [
+		{
+			content:
+				'Realizar los proyectos de la Universidad de la clase de ingenieria',
+			cheked: true,
+		},
+	],
 };
 
 const storeReducer = (state, action) => {
 	switch (action.type) {
-		case 'añadir':
+		case types.añadir:
 			return {
 				...state,
 				tareasPendientes: [...state.tareasPendientes, action.payload],
 			};
 
-		case 'eliminar':
+		case types.añadirGatos:
+			return {
+				...state,
+				tareasPendientes: [...state.tareasPendientes, ...action.payload],
+			};
+
+		case types.eliminar:
 			return {
 				...state,
 				tareasPendientes: state.tareasPendientes.filter(
@@ -26,7 +44,7 @@ const storeReducer = (state, action) => {
 				),
 			};
 
-		case 'finalizar':
+		case types.finalizar:
 			return {
 				...state,
 				tareasPendientes: state.tareasPendientes.filter(
@@ -35,12 +53,17 @@ const storeReducer = (state, action) => {
 				tareasTerminadas: [...state.tareasTerminadas, action.payload],
 			};
 
-		case 'editar':
+		case types.editar:
 			return {
 				...state,
-				tareasPendientes: state.tareasPendientes.map((tarea) =>
-					tarea.content === action.payload.content ? action.payload : tarea
-				),
+				tareasPendientes: state.tareasPendientes.map((tarea) => {
+					if (tarea.content === action.payload.content) {
+						tarea.content = action.payload.newValue;
+						return tarea;
+					} else {
+						return tarea;
+					}
+				}),
 			};
 		default:
 			return state;

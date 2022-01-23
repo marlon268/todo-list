@@ -1,0 +1,27 @@
+.ReactModal__Content {
+	div {
+		@include display-flex(center, center, row);
+		flex-wrap: wrap;
+
+		textarea {
+			outline: none;
+			border: none;
+			box-shadow: 1px 1px 5px 0px $color2;
+			padding: 5px;
+			font-size: 1.5rem;
+			margin-bottom: 20px;
+			height: 40px;
+			width: 320px;
+			height: 200px;
+
+			@media (min-width: 724px) {
+				width: 500px;
+			}
+		}
+
+		button {
+			width: 120px;
+			margin: 10px;
+		}
+	}
+}
