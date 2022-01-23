@@ -14,12 +14,14 @@
 		width: 550px;
 	}
 
-	.article {
+	.article,
+	.animation-art {
 		@include display-flex(space-between, center, row);
 		box-shadow: 1px 1px 5px 0px $color2;
 		width: 250px;
 		padding: 5px 10px;
 		margin: 5px;
+		animation: articulos 1s;
 
 		@media (min-width: 724px) {
 			width: 300px;
@@ -67,6 +69,10 @@
 				}
 			}
 		}
+	}
+
+	.animation-art {
+		animation: articulos-desaparece 1s;
 	}
 
 	h4 {

@@ -22,14 +22,14 @@ function App() {
 
 				<div className="todo-list_content">
 					<SectionList title="Tareas pendientes">
-						{search.map((item, index) => (
-							<Article key={index} {...item} />
+						{search.map((item) => (
+							<Article key={item.content} {...item} />
 						))}
 					</SectionList>
 
 					<SectionList title="Tareas terminadas">
 						{store.tareasTerminadas.map((item, index) => (
-							<Article key={index} {...item} />
+							<Article key={item.content} {...item} />
 						))}
 					</SectionList>
 				</div>

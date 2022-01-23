@@ -32,6 +32,7 @@ export const MyModal = ({
 			isOpen={modalIsOpen}
 			onRequestClose={closeModal}
 			style={customStyles}
+			closeTimeoutMS={500}
 		>
 			<div>
 				<label htmlFor="añadir">Agrega una tarea</label>

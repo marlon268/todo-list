@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react';
+import { memo, useContext, useState } from 'react';
 
 import { StoreContext } from '../../store/StoreProvider';
 
@@ -17,11 +17,16 @@ import { useModal } from '../../hooks/useModal';
 
 export const Article = memo(({ cheked, content }) => {
 	const [, dispatch] = useContext(StoreContext);
+	const [animation, setAnimation] = useState(false);
 	const { closeModal, modalIsOpen, setModalIsOpen, setValue, value } =
 		useModal(content);
 
 	const handleEliminarTarea = () => {
-		dispatch(eliminarTarea(content));
+		setAnimation(true);
+		setTimeout(() => {
+			dispatch(eliminarTarea(content));
+			setAnimation(false);
+		}, 500);
 	};
 
 	const handleEditarTarea = () => {
@@ -30,12 +35,16 @@ export const Article = memo(({ cheked, content }) => {
 
 	const handleFinalizarTarea = () => {
 		if (!cheked) {
-			dispatch(finalizarTarea(content));
+			setAnimation(true);
+			setTimeout(() => {
+				dispatch(finalizarTarea(value));
+				setAnimation(false);
+			}, 500);
 		}
 	};
 
 	return (
-		<article className="article">
+		<article className={` ${animation ? 'animation-art' : 'article'} `}>
 			<button className="article_button" onClick={handleFinalizarTarea}>
 				<img src={cheked ? hecho : nohecho} alt="estado" />
 			</button>

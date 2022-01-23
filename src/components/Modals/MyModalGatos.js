@@ -57,6 +57,7 @@ export const MyModalGatos = ({ modalIsOpen, closeModal }) => {
 			isOpen={modalIsOpen}
 			onRequestClose={closeModal}
 			style={customStyles}
+			closeTimeoutMS={500}
 		>
 			<h3>Frases de Gatos</h3>
 			<h4>Selecciona la cantidad </h4>
